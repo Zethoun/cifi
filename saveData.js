@@ -5,7 +5,7 @@ PLAYER DATA CHANGE LOG
 */
 
 const blankPlayer = {
-    version: 12,
+    version: 15,
     activePortal: 'academyEffector',
     colorProfile: {
         academyProjects: ['#444444', '#CCCC44', '#44CC44', '#4444CC'],
@@ -334,8 +334,11 @@ function ResetPlayerData() {
 }
 
 // Add new properties to player data object upon opening newer version of Super Assistant
-function UpdatePlayerData() {
-    SavePlayerData()
+function UpdatePlayerData(data) {
+    if (playerData.academy.farms !== GameDB.academy.planets * 3) {
+        playerData.academy.farms = blankPlayer.academy.farms
+    }
+    SavePlayerData(data)
 }
 
 // This part is just saved for future reference from my console-based project
@@ -371,4 +374,6 @@ function UpdatePlayerData() {
 // GenerateMilestoneAccess();
 
 // Run automatic update of player data when the Super Assistant it was saved from is outdated
-if (playerData.version < blankPlayer.version) UpdatePlayerData()
+if (playerData.version < blankPlayer.version) {
+    UpdatePlayerData(blankPlayer)
+}
