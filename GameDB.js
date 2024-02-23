@@ -1,5 +1,5 @@
 let GameDB = {
-    version: 3,
+    version: 4,
     academy: {
         personnel: ['pods', 'fireteams', 'titans', 'corvettes'],
         planets: 6,
@@ -117,7 +117,7 @@ let GameDB = {
             {
                 id: 42,
                 baseTime: 30,
-                maxPop: 20,
+                maxPop: 10000,
                 baseAP: 2,
                 // Difar
                 baseMats: [0, 0, 0, 0, 0, 0, 0, 0],
