@@ -18,7 +18,7 @@ function reDim() {
   $(`.navbar-nav .nav-link[data-tab=${playerData.activePortal}]`).addClass(
     'active',
   )
-
+  $('.navbar-brand').append(' v' + GameDB.version)
   $('.navbar-nav')
     .find('.nav-link')
     .click((e) => {
