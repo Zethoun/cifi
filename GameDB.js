@@ -107,7 +107,7 @@ let GameDB = {
             },
             {
                 id: 42,
-                baseTime: 30,
+                baseTime: 2437498,
                 maxPop: 20,
                 baseAP: 2,
                 // Difar
